@@ -288,20 +288,20 @@ class TestDrivers(TestCase):
     def test_family(self):
         """ famiy driver support Multi-file"""
         fname = self.mktemp()
-        fid = File(fname, 'w', driver='family')
+        fid = File(fname, 'r+', driver='family')
         self.assertTrue(fid)
         self.assertEqual(fid.driver, 'family')
         fid.close()
 
     def test_memb_size(self):
         fname = self.mktemp()
-        fid = File(fname, 'w', driver='family', memb_size=2**31-1)
+        fid = File(fname, 'r+', driver='family', memb_size=2**31-1)
         self.assertTrue(fid)
         fid.close()
 
     def test_fileobj(self):
         fname = self.mktemp()
-        fid = File(fname, 'w', driver='fileobj')
+        fid = File(fname, 'r+', driver='fileobj')
         self.assertTrue(fid)
         self.assertEqual(fid.driver, 'fileobj')
         self.assertFalse(fid)  # for test
