@@ -1086,7 +1086,7 @@ cdef class PropFAID(PropInstanceID):
         Select the "fileobj" file driver (h5py-specific).
         """
         return H5Pset_driver(self.id, driver_id, <PyObject *>fileobj)
-
+    # FIXME: get_fileobj_driver(self)
 
     @with_phil
     def get_driver(self):

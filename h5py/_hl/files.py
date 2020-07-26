@@ -250,6 +250,7 @@ class File(Group):
                    h5fd.MPIO: 'mpio',
                    h5fd.MPIPOSIX: 'mpiposix',
                    h5fd.fileobj_driver: 'fileobj'}
+                   # there is no h5fd.fileobj_driver in plist
         return drivers.get(self.id.get_access_plist().get_driver(), 'unknown')
 
     @property
